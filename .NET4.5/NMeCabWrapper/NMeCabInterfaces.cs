@@ -44,7 +44,27 @@ namespace NMeCabWrapper
 
 	public interface IMeCabNode
 	{
-		// 見送り
+		IMeCabNode Prev { get; set; }
+		IMeCabNode Next { get; set; }
+		IMeCabNode ENext { get; set; }
+		IMeCabNode BNext { get; set; }
+		string Surface { get; set; }
+		string Feature { get; set; }
+		int Length { get; set; }
+		int RLength { get; set; }
+		ushort RCAttr { get; set; }
+		ushort LCAttr { get; set; }
+		ushort PosId { get; set; }
+		uint CharType { get; set; }
+		dynamic Stat { get; }
+		bool IsBest { get; set; }
+		float Alpha { get; set; }
+		float Beta { get; set; }
+		float Prob { get; set; }
+		short WCost { get; set; }
+		long Cost { get; set; }
+		int BPos { get; set; }
+		int EPos { get; set; }
 	}
 
 	public static class NMeCabWrapperExtension
@@ -59,6 +79,12 @@ namespace NMeCabWrapper
 		{
 			var o = param.UndoActLike();
 			Impromptu.InvokeSet(o, "LatticeLevel", context.LatticeLevel(label));
+		}
+
+		public static void SetStat(this IMeCabNode param, string label, NMeCabManager context)
+		{
+			var o = param.UndoActLike();
+			Impromptu.InvokeSet(o, "Stat", context.MeCabNodeStat(label));
 		}
 	}
 }

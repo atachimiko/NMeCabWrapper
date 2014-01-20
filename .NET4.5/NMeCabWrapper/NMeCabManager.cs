@@ -15,6 +15,7 @@ namespace NMeCabWrapper
 		readonly Type NMeCab_MeCabParam;
 		readonly Type NMeCab_MeCabTagger;
 		readonly Type NMeCab_MeCabLatticeLevel;
+		readonly Type NMeCab_MeCabNodeStat;
 
 		public NMeCabManager(string mecabDllPath)
 		{
@@ -23,6 +24,7 @@ namespace NMeCabWrapper
 			NMeCab_MeCabParam = nmecabDll.GetType("NMeCab.MeCabParam", true, false);
 			NMeCab_MeCabTagger = nmecabDll.GetType("NMeCab.MeCabTagger", true, false);
 			NMeCab_MeCabLatticeLevel = nmecabDll.GetType("NMeCab.MeCabLatticeLevel", true, false);
+			NMeCab_MeCabNodeStat = nmecabDll.GetType("NMeCab.MeCabNodeStat", true, false);
 		}
 
 		public NMeCabManager(FileInfo mecabDll)
@@ -52,6 +54,11 @@ namespace NMeCabWrapper
 			var o2 = NMeCab_MeCabLatticeLevel.InvokeMember(null, BindingFlags.CreateInstance, null, null, new object[] { });
 
 			return Enum.Parse(NMeCab_MeCabLatticeLevel, labelString);
+		}
+
+		public object MeCabNodeStat(string labelString)
+		{
+			return Enum.Parse(NMeCab_MeCabNodeStat, labelString);
 		}
 	}
 }
