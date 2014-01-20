@@ -1,24 +1,24 @@
-NMeCabWrapper
+ï»¿NMeCabWrapper
 ============================
 
-NMeCab(Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“MeCab‚Ì.NET”Å)‚ÌDLL‚ğ“®“I‚É“Ç‚İ‚ñ‚Å
-ˆ—‚ğŒÄ‚Ño‚·‚½‚ß‚Ìƒ‰ƒbƒp[ƒ‰ƒCƒuƒ‰ƒŠ‚Å‚·B
+NMeCab(å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³MeCabã®.NETç‰ˆ)ã®DLLã‚’å‹•çš„ã«èª­ã¿è¾¼ã‚“ã§
+å‡¦ç†ã‚’å‘¼ã³å‡ºã™ãŸã‚ã®ãƒ©ãƒƒãƒ‘ãƒ¼ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã™ã€‚
 
 Requirements
 ------------
-# VisualSutdio2012
-# .NET Framework 4 / 4.5
-# [impromptu-interface](https://github.com/ekonbenefits/impromptu-interface)
+* VisualSutdio2012
+* .NET Framework 4 / 4.5
+* [impromptu-interface](https://github.com/ekonbenefits/impromptu-interface)
 
 Build
 ------------
-impromptu-interfaceƒ‰ƒCƒuƒ‰ƒŠ‚ğg—p‚µ‚Ä‚¢‚Ü‚·B
-NuGet‚©‚çimpromptu-interface‚ÌƒpƒbƒP[ƒW‚ğæ“¾‚µ‚Ä‚­‚¾‚³‚¢B
+impromptu-interfaceãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’ä½¿ç”¨ã—ã¦ã„ã¾ã™ã€‚
+NuGetã‹ã‚‰impromptu-interfaceã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å–å¾—ã—ã¦ãã ã•ã„ã€‚
 
 Sample
 ------------
-•Ê“rA‰º‹L‚ÌƒŠƒ“ƒN‚æ‚èNMeCab‚Ìƒ‰ƒ“ƒ^ƒCƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚ÆŒ`‘Ô‘f‰ğÍ‚É•K—v‚È«‘‚ğ—pˆÓ‚µ‚Ü‚·B
-Œ`‘Ô‘f‰ğÍ‚É•K—v‚È«‘‚É‚Â‚¢‚Ä‚ÍNMeCab‚Ì”z•zƒpƒbƒP[ƒW‚Éipadic«‘ƒtƒ@ƒCƒ‹‚ª“¯«‚µ‚Ä‚¨‚è‚Ü‚·B(Šm”F 2014/1/20)
+åˆ¥é€”ã€ä¸‹è¨˜ã®ãƒªãƒ³ã‚¯ã‚ˆã‚ŠNMeCabã®ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¨å½¢æ…‹ç´ è§£æã«å¿…è¦ãªè¾æ›¸ã‚’ç”¨æ„ã—ã¾ã™ã€‚
+å½¢æ…‹ç´ è§£æã«å¿…è¦ãªè¾æ›¸ã«ã¤ã„ã¦ã¯NMeCabã®é…å¸ƒãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ipadicè¾æ›¸ãƒ•ã‚¡ã‚¤ãƒ«ãŒåŒæ¢±ã—ã¦ãŠã‚Šã¾ã™ã€‚(ç¢ºèª 2014/1/20)
 
 ```c#
 static void Main(string[] args)
@@ -27,26 +27,26 @@ static void Main(string[] args)
 	var manager = new NMeCabManager(dllPath);
 	
 	IMeCabParam param = manager.CreateMeCabParam();
-	param.DicDir = @"C:\NMeCab\ipadic"; // © ipadic‚Ì«‘ƒtƒ@ƒCƒ‹‚Ü‚Å‚ÌƒpƒX
+	param.DicDir = @"C:\NMeCab\ipadic"; // â† ipadicã®è¾æ›¸ãƒ•ã‚¡ã‚¤ãƒ«ã¾ã§ã®ãƒ‘ã‚¹
 	
 	using(IMeCabTagger tagger = n.CreateMeCabTagger(param))
 	{
-		var parsed = trigger.Parse(@"‹Â‚°‚Î@‘¸‚µ@‰ä‚ªt‚Ì‰¶
-‹³‚Ì’ë‚É‚à@‚Í‚âŠô”N
-v‚¦‚Î@‚¢‚Æ¾‚µ@‚±‚Ì”NŒ
-¡‚±‚»@•Ê‚ê‚ß@‚¢‚´‚³‚ç‚Î");
+		var parsed = trigger.Parse(@"ä»°ã’ã°ã€€å°Šã—ã€€æˆ‘ãŒå¸«ã®æ©
+æ•™ã®åº­ã«ã‚‚ã€€ã¯ã‚„å¹¾å¹´
+æ€ãˆã°ã€€ã„ã¨ç–¾ã—ã€€ã“ã®å¹´æœˆ
+ä»Šã“ãã€€åˆ¥ã‚Œã‚ã€€ã„ã–ã•ã‚‰ã°");
 
 		Console.WriteLine(parsed);
 	}
 }
 ```
 
-ŠÖ˜Aî•ñ
+é–¢é€£æƒ…å ±
 --------
-[NMeCab(Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“MeCab‚Ì.NET”Å)](http://sourceforge.jp/projects/nmecab/)
+[NMeCab(å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³MeCabã®.NETç‰ˆ)](http://sourceforge.jp/projects/nmecab/)
 
 
-ƒ‰ƒCƒZƒ“ƒX(LICENSE)
+ãƒ©ã‚¤ã‚»ãƒ³ã‚¹(LICENSE)
 --------
 Copyright (c) 2014, atachimiko
 All rights reserved.
